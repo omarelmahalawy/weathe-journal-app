@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: #fffff8;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 16px 5px #d1d1d1;
+    font-family: 'Oswald', sans-serif;
+}
+
+@media (min-width: 992px) {
+    #app {
+        width: 350px;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .headline {
+        font-size: 2em;
+    }
+    button {
+        margin: 10px 0;
+    }
+    #entryHolder {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 991px) {
+    #app {
+        width: 90%;
+        height: 80vh;
+        justify-content: right;
+        padding: 50px;
+    }
+    .headline {
+        font-size: 4em;
+    }
+    .holder.zip,
+    .holder.feel {
+        font-size: 2.5em;
+    }
+    button {
+        margin: 65px 0;
+    }
+    #entryHolder {
+        font-size: 1.7em;
+    }
+    .title {
+        font-size: 2.5em;
+    }
+}
+
+.headline {
+    color: #f9a863;
+    margin-bottom: 40px;
+}
+
+label {
+    font-size: 1.3em;
+    margin: 10px 0px;
+}
+
+.entry {
+    width: 100%;
+    /* text-align: center; */
+    font-size: 1.5em;
+}
+
+#entryHolder {
+    transition: 1s;
+    background-color: white;
+    padding: 10px;
+    filter: opacity(0);
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+
+.holder.zip,
+.holder.feel {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    padding: 15px 10px;
+    font-size: 1em;
+    color: black;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+button {
+    border: none;
+    background-color: #f8a86385;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 30px;
+    font-size: 1.3em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #f8a963e5;
+}
+
+
+/* Reset style for HTML element on active to have no border*/
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    box-shadow: 0px 0px 6px 3px #e7e7e7;
+}
