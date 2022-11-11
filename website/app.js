@@ -1,6 +1,6 @@
 // creating the api key and url from openweathermap
-let personalKey = '440fd1bad2aa75310547a2f59b79aaba';
-let apiKey = `${personalKey}&units=imperial`
+const personalKey = '440fd1bad2aa75310547a2f59b79aaba';
+const apiKey = `${personalKey}&units=imperial`
 
 // creating the event of clicking on generate button
 document.querySelector("#generate").addEventListener("click", generateRequests)
@@ -12,8 +12,8 @@ function generateRequests() {
     let feelings = document.querySelector("#feelings").value
     let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=${apiKey}&units=imperial`;
     // Create a new date instance dynamically with JS
-    let d = new Date();
-    let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+    const d = new Date();
+    let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
     getWeatherData(url)
         .then(function(data) {
             console.log(data)
