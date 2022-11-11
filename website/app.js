@@ -24,20 +24,29 @@ function generateRequests() {
                 document.querySelector("#entryHolder").style.filter = "opacity(1)";
                 return `city not found`
             }
-            postData('/addData', { date: newDate, temp: data.main.temp, content: feelings })
-            console.log({ date: newDate, temp: data.main.temp, content: feelings })
-            updateData('/all')
-                .then(function(data) {
-                    console.log(data)
-                    document.querySelector("#date").innerHTML = `Date: ${data.date}`;
-                    document.querySelector("#temp").innerHTML = `the temprature is ${data.temp}°C`;
-                    if (data.content == "") {
-                        document.querySelector("#content").innerHTML = `Please enter your feeling!`;
-                    } else {
-                        document.querySelector("#content").innerHTML = `You feel ${data.content}`;
-                    }
-                    document.querySelector("#entryHolder").style.filter = "opacity(1)";
-                })
+            document.querySelector("#date").innerHTML = `Date: ${newDate}`;
+            document.querySelector("#temp").innerHTML = `the temprature is ${data.main.temp}°C`;
+            if (data.content == "") {
+                document.querySelector("#content").innerHTML = `Please enter your feeling!`;
+            } else {
+                document.querySelector("#content").innerHTML = `You feel ${feelings}`;
+            }
+            document.querySelector("#entryHolder").style.filter = "opacity(1)";
+            //sending data form OWM api to the local server endpoint
+            // postData('/addData', { date: newDate, temp: data.main.temp, content: feelings })
+            // console.log({ date: newDate, temp: data.main.temp, content: feelings })
+            // updateData('/all')
+            // .then(function(data) {
+            //     console.log(data)
+            //     document.querySelector("#date").innerHTML = `Date: ${data.date}`;
+            //     document.querySelector("#temp").innerHTML = `the temprature is ${data.temp}°C`;
+            //     if (data.content == "") {
+            //         document.querySelector("#content").innerHTML = `Please enter your feeling!`;
+            //     } else {
+            //         document.querySelector("#content").innerHTML = `You feel ${data.content}`;
+            //     }
+            //     document.querySelector("#entryHolder").style.filter = "opacity(1)";
+            // })
         })
 }
 
