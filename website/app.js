@@ -18,7 +18,7 @@ function generateRequests() {
         .then(function(data) {
             console.log(data)
             if (data.message == "city not found") {
-                document.querySelector("#date").innerHTML = `City not found!, pleas enter correct zipcode`;
+                document.querySelector("#date").innerHTML = `City not found!, please enter correct zipcode`;
                 document.querySelector("#temp").innerHTML = ``;
                 document.querySelector("#content").innerHTML = ``;
                 document.querySelector("#entryHolder").style.filter = "opacity(1)";
